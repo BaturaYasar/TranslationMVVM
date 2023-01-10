@@ -12,16 +12,28 @@ protocol NetworkManagerDelegate {
     var provider: MoyaProvider<MultiTarget> {get}
     
     func postTranslateDetect(request: DetectRequest, completition: @escaping ((Result<DetectResponse, Error>) -> (Void)))
+    
+    func getLanguages(completition: @escaping ((Result<DataLanguageResponse, Error>) -> (Void)))
+    
+    func getTranslate(request: TranslateRequest, completition: @escaping ((Result<TranslateResponse, Error>) -> (Void)))
 }
 
 class NetworkManager: NetworkManagerDelegate {
-   
+    
     static let shared = NetworkManager()
     
     var provider = Moya.MoyaProvider<MultiTarget>(plugins: [NetworkLoggerPlugin(verbose: true, cURL: true)])
     
     func postTranslateDetect(request: DetectRequest, completition: @escaping ((Result<DetectResponse, Error>) -> (Void))) {
         requestData(target: TranslateAPI.detect(detectRequest: request), completion: completition)
+    }
+    
+    func getLanguages(completition: @escaping ((Result<DataLanguageResponse, Error>) -> (Void))) {
+        requestData(target: TranslateAPI.language, completion: completition)
+    }
+    
+    func getTranslate(request: TranslateRequest, completition: @escaping ((Result<TranslateResponse, Error>) -> (Void))) {
+        requestData(target: TranslateAPI.translate(translateRequest: request), completion: completition)
     }
 }
 

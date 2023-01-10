@@ -8,32 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TranslateVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TranslationMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TranslateVC" customModule="TranslationMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="9eu-ox-tp4">
-                                <rect key="frame" x="14" y="89" width="365" height="45"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZd-eo-6vJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="151" height="45"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Detect"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlH-0S-vgu">
-                                        <rect key="frame" x="214" y="0.0" width="151" height="45"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="English"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="kDc-aJ-un1"/>
-                                </constraints>
-                            </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Enter text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vug-dT-pPr">
                                 <rect key="frame" x="14" y="142" width="365" height="100"/>
                                 <constraints>
@@ -58,35 +40,51 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.right" catalog="system"/>
+                                <connections>
+                                    <action selector="enterButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ItK-bP-1gb"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aal-6e-8ls">
-                                <rect key="frame" x="333" y="142" width="40" height="40"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="clear" catalog="system"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5rV-wP-RQr">
+                                <rect key="frame" x="14" y="89" width="365" height="45"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Detect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQ6-QC-GjT">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="English" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhE-ZI-4G1">
+                                        <rect key="frame" x="190" y="0.0" width="175" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="9QZ-9e-9Ne"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="VeN-5l-yTL" firstAttribute="top" secondItem="vug-dT-pPr" secondAttribute="bottom" constant="8" symbolic="YES" id="0xG-9n-36t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9eu-ox-tp4" secondAttribute="trailing" constant="14" id="6EG-sl-ddi"/>
-                            <constraint firstItem="aal-6e-8ls" firstAttribute="top" secondItem="vug-dT-pPr" secondAttribute="top" id="9FK-Zv-QUr"/>
-                            <constraint firstItem="vug-dT-pPr" firstAttribute="top" secondItem="9eu-ox-tp4" secondAttribute="bottom" constant="8" symbolic="YES" id="FCj-I4-Hga"/>
+                            <constraint firstItem="5rV-wP-RQr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="Eg2-qi-QAC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5rV-wP-RQr" secondAttribute="trailing" constant="14" id="G5v-5W-7do"/>
+                            <constraint firstItem="vug-dT-pPr" firstAttribute="top" secondItem="5rV-wP-RQr" secondAttribute="bottom" constant="8" symbolic="YES" id="GwD-TE-qKU"/>
                             <constraint firstItem="VeN-5l-yTL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="K7T-M1-8E4"/>
-                            <constraint firstItem="9eu-ox-tp4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Sve-n5-sJI"/>
                             <constraint firstItem="vug-dT-pPr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="U8S-1c-l2S"/>
-                            <constraint firstItem="9eu-ox-tp4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="WhA-dS-bgv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VeN-5l-yTL" secondAttribute="trailing" constant="14" id="ZNF-Yd-58x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vug-dT-pPr" secondAttribute="trailing" constant="14" id="fUX-6U-EsE"/>
-                            <constraint firstItem="aal-6e-8ls" firstAttribute="trailing" secondItem="vug-dT-pPr" secondAttribute="trailing" id="kBE-XM-T1s"/>
                             <constraint firstItem="ksW-ru-nRE" firstAttribute="bottom" secondItem="vug-dT-pPr" secondAttribute="bottom" id="nQG-NP-t7I"/>
-                            <constraint firstItem="aal-6e-8ls" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vug-dT-pPr" secondAttribute="leading" id="oE1-gY-8lg"/>
                             <constraint firstItem="ksW-ru-nRE" firstAttribute="trailing" secondItem="vug-dT-pPr" secondAttribute="trailing" id="sZQ-67-fad"/>
+                            <constraint firstItem="5rV-wP-RQr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="z0V-NL-1nL"/>
                             <constraint firstItem="ksW-ru-nRE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vug-dT-pPr" secondAttribute="leading" id="zTQ-RO-ruh"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inputTextField" destination="vug-dT-pPr" id="4Mg-Jh-dgU"/>
                         <outlet property="outputLabel" destination="VeN-5l-yTL" id="vjj-v0-hdy"/>
+                        <outlet property="sourceLanguageTextField" destination="HQ6-QC-GjT" id="Txo-c0-dau"/>
+                        <outlet property="targetLanguageTextField" destination="qhE-ZI-4G1" id="p3h-tF-hAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -96,7 +94,6 @@
     </scenes>
     <resources>
         <image name="arrowshape.right" catalog="system" width="128" height="104"/>
-        <image name="clear" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
