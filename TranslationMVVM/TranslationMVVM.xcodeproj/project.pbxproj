@@ -13,6 +13,13 @@
 		66951830296CA88A0008E5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6695182E296CA88A0008E5DB /* Main.storyboard */; };
 		66951832296CA88C0008E5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66951831296CA88C0008E5DB /* Assets.xcassets */; };
 		66951835296CA88C0008E5DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66951833296CA88C0008E5DB /* LaunchScreen.storyboard */; };
+		6695183E296CA9B10008E5DB /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 6695183D296CA9B10008E5DB /* Moya */; };
+		66951843296CAA1E0008E5DB /* BaseTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66951842296CAA1E0008E5DB /* BaseTarget.swift */; };
+		66951846296CABB30008E5DB /* TranslateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66951845296CABB30008E5DB /* TranslateAPI.swift */; };
+		6695184B296CAC660008E5DB /* DetectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695184A296CAC660008E5DB /* DetectRequest.swift */; };
+		6695184D296CAD410008E5DB /* DetectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695184C296CAD410008E5DB /* DetectResponse.swift */; };
+		66951850296CAE370008E5DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695184F296CAE370008E5DB /* NetworkManager.swift */; };
+		66BA8017296DE564007BF132 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA8016296DE563007BF132 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,12 @@
 		66951831296CA88C0008E5DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66951834296CA88C0008E5DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66951836296CA88C0008E5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66951842296CAA1E0008E5DB /* BaseTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTarget.swift; sourceTree = "<group>"; };
+		66951845296CABB30008E5DB /* TranslateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPI.swift; sourceTree = "<group>"; };
+		6695184A296CAC660008E5DB /* DetectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectRequest.swift; sourceTree = "<group>"; };
+		6695184C296CAD410008E5DB /* DetectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectResponse.swift; sourceTree = "<group>"; };
+		6695184F296CAE370008E5DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		66BA8016296DE563007BF132 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6695183E296CA9B10008E5DB /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +70,93 @@
 		66951827296CA88A0008E5DB /* TranslationMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				66BA8015296DE4E0007BF132 /* Extensions */,
+				66951847296CAC1F0008E5DB /* Models */,
+				66951840296CA9DA0008E5DB /* Networking */,
+				6695183F296CA9CC0008E5DB /* Scenes */,
 				66951828296CA88A0008E5DB /* AppDelegate.swift */,
 				6695182A296CA88A0008E5DB /* SceneDelegate.swift */,
-				6695182C296CA88A0008E5DB /* ViewController.swift */,
 				6695182E296CA88A0008E5DB /* Main.storyboard */,
 				66951831296CA88C0008E5DB /* Assets.xcassets */,
 				66951833296CA88C0008E5DB /* LaunchScreen.storyboard */,
 				66951836296CA88C0008E5DB /* Info.plist */,
 			);
 			path = TranslationMVVM;
+			sourceTree = "<group>";
+		};
+		6695183F296CA9CC0008E5DB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6695182C296CA88A0008E5DB /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		66951840296CA9DA0008E5DB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6695184E296CAE260008E5DB /* NetworkManager */,
+				66951841296CA9E70008E5DB /* BaseTarget */,
+				66951844296CAB2F0008E5DB /* TranslateAPI */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		66951841296CA9E70008E5DB /* BaseTarget */ = {
+			isa = PBXGroup;
+			children = (
+				66951842296CAA1E0008E5DB /* BaseTarget.swift */,
+			);
+			path = BaseTarget;
+			sourceTree = "<group>";
+		};
+		66951844296CAB2F0008E5DB /* TranslateAPI */ = {
+			isa = PBXGroup;
+			children = (
+				66951845296CABB30008E5DB /* TranslateAPI.swift */,
+			);
+			path = TranslateAPI;
+			sourceTree = "<group>";
+		};
+		66951847296CAC1F0008E5DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66951849296CAC460008E5DB /* Responses */,
+				66951848296CAC400008E5DB /* Requests */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66951848296CAC400008E5DB /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				6695184A296CAC660008E5DB /* DetectRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		66951849296CAC460008E5DB /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				6695184C296CAD410008E5DB /* DetectResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		6695184E296CAE260008E5DB /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				6695184F296CAE370008E5DB /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		66BA8015296DE4E0007BF132 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				66BA8016296DE563007BF132 /* UIView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +175,9 @@
 			dependencies = (
 			);
 			name = TranslationMVVM;
+			packageProductDependencies = (
+				6695183D296CA9B10008E5DB /* Moya */,
+			);
 			productName = TranslationMVVM;
 			productReference = 66951825296CA88A0008E5DB /* TranslationMVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +206,9 @@
 				Base,
 			);
 			mainGroup = 6695181C296CA88A0008E5DB;
+			packageReferences = (
+				6695183C296CA9B10008E5DB /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 66951826296CA88A0008E5DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +237,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6695182D296CA88A0008E5DB /* ViewController.swift in Sources */,
+				6695184D296CAD410008E5DB /* DetectResponse.swift in Sources */,
+				66951846296CABB30008E5DB /* TranslateAPI.swift in Sources */,
+				66951843296CAA1E0008E5DB /* BaseTarget.swift in Sources */,
+				66951850296CAE370008E5DB /* NetworkManager.swift in Sources */,
+				66BA8017296DE564007BF132 /* UIView+Ext.swift in Sources */,
+				6695184B296CAC660008E5DB /* DetectRequest.swift in Sources */,
 				66951829296CA88A0008E5DB /* AppDelegate.swift in Sources */,
 				6695182B296CA88A0008E5DB /* SceneDelegate.swift in Sources */,
 			);
@@ -302,9 +406,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.baturayyasar.TranslationMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -330,9 +437,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.baturayyasar.TranslationMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6695183C296CA9B10008E5DB /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6695183D296CA9B10008E5DB /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6695183C296CA9B10008E5DB /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6695181D296CA88A0008E5DB /* Project object */;
 }
