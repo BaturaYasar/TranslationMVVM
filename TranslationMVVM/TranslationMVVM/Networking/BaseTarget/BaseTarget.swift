@@ -20,7 +20,7 @@ public extension BaseTarget {
     var headers: [String : String]? {[
         "content-type": "application/x-www-form-urlencoded",
         "Accept-Encoding": "application/gzip",
-        "X-RapidAPI-Key": "5bc5970d0emsh80eb32d0e3a21f2p18f54ajsnb6e668314428",
+        "X-RapidAPI-Key": "155d2168bbmshc6d6702ed9fa1e4p1e1a44jsnee4d94fb2f76",
         "X-RapidAPI-Host": "google-translate1.p.rapidapi.com"
     ]}
     var sampleData: Data {Data()}

@@ -16,6 +16,9 @@ class TranslateVC: UIViewController {
     var selectLanguagePicker = UIPickerView()
     var translateViewModel: TranslateViewModel?
     var lastSelectedTextField: UITextField?
+    var rightView: UIView?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +27,25 @@ class TranslateVC: UIViewController {
         setupPickerView()
         translateViewModel = TranslateViewModel(delegate: self)
         translateViewModel?.getLanguageList()
+        inputTextField.clearButtonMode = .always
+        createToolBar()
     }
     
-    func setupPickerView() {
+    fileprivate func createToolBar() {
+        let toolBar = UIToolbar()
+        let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        toolBar.items = [flexibleSpace, done]
+        toolBar.sizeToFit()
+        targetLanguageTextField.inputAccessoryView = toolBar
+        sourceLanguageTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc func doneTapped() {
+        self.view.endEditing(true)
+    }
+    
+    fileprivate func setupPickerView() {
         selectLanguagePicker.dataSource = self
         selectLanguagePicker.delegate = self
         
@@ -71,7 +90,6 @@ extension TranslateVC: UIPickerViewDelegate {
         }else if lastSelectedTextField == targetLanguageTextField {
             targetLanguageTextField.text = languageTitle
         }
-        self.view.endEditing(true)
     }
 }
 

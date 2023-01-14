@@ -10,7 +10,5 @@ import Foundation
 struct TranslateRequest:Codable {
     var q: String
     var target: String
-    var source: String
-    
-    
+    var source: String?
 }
